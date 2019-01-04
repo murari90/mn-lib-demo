@@ -133,6 +133,41 @@
           }
         }
       }
+    },
+    "mn-lib": {
+      "root": "projects/mn-lib",
+      "sourceRoot": "projects/mn-lib/src",
+      "projectType": "library",
+      "prefix": "mn",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mn-lib/tsconfig.lib.json",
+            "project": "projects/mn-lib/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mn-lib/src/test.ts",
+            "tsConfig": "projects/mn-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/mn-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mn-lib/tsconfig.lib.json",
+              "projects/mn-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "mn-lib-demo"
