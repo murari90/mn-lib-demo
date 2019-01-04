@@ -1,6 +1,6 @@
-# MN Lib Demo
+# MN Angular Library Demo
 
-This project is made as a library of components to be used with Angular
+This project is made as a library of components to be used with Angular.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
 
