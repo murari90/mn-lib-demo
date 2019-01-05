@@ -33,28 +33,19 @@ export class ColorPickerComponent implements OnInit {
     this.show = !this.show;
   }
 
-  /**
- * Change color from default colors
- * @param {string} color
- */
-public changeColor(color: string) {
-  this.selectedColor = color;
-  this.event.emit(this.selectedColor); // Return color
-  this.show = false;
-}
-
-
-/**
- * Change color from input
- * @param {string} color
- */
-public changeColorManual(color: string) {
-  const isValid = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color);
-
-  if (isValid) {
+  public changeColor(color: string) {
     this.selectedColor = color;
     this.event.emit(this.selectedColor); // Return color
+    this.show = false;
   }
-}
+
+  public changeColorManual(color: string) {
+    const isValid = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color);
+
+    if (isValid) {
+      this.selectedColor = color;
+      this.event.emit(this.selectedColor); // Return color
+    }
+  }
 
 }
